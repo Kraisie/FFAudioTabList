@@ -1,0 +1,30 @@
+{
+
+  "manifest_version": 2,
+  "name": "Audio Tab List",
+  "version": "0.1",
+  "description": "Posts a list of all tabs that are currently playing any audio to the localhost so a program might catch those and use them. No server is requiered and no third party gets any data. This extension is only ment to be used as a means to an end!",
+
+  "icons": {
+    "48": "pics/icon48.png",
+    "96": "pics/icon96.png"
+  },
+
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "48": "pics/icon48.png",
+      "96": "pics/icon96.png"
+    }
+  },
+
+  "permissions": [
+    "tabs"
+  ]
+
+}
