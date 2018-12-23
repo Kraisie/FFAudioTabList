@@ -35,6 +35,10 @@ function runFunction(tab) {
             if (value.length > 0) {
                 playing = true;
                 for (i = 0; i < value.length; i++) {
+                    //escape " and \
+                    value[i].title = value[i].title.replace(/"/g, '\\"');
+                    value[i].title = value[i].title.replace(/\\/g, '\\\\');
+
                     dataJson = dataJson.concat("\"" + value[i].title + "\"");
                     if (i + 1 < value.length) {
                         dataJson = dataJson.concat(",");
