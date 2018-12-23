@@ -30,23 +30,23 @@ function runFunction(tab) {
 
             //JSON.stringify did not work for some reason so generate json 'by hand'
             var playing = false;
-            var dataJson = "{arrTabs:[";
+            var dataJson = "{\"arrTabs\":[";
             //if audio tabs exist we add them to an array in a json conform string
             if (value.length > 0) {
                 playing = true;
                 for (i = 0; i < value.length; i++) {
-                    dataJson = dataJson.concat(value[i].title);
+                    dataJson = dataJson.concat("\"" + value[i].title + "\"");
                     if (i + 1 < value.length) {
                         dataJson = dataJson.concat(",");
                     }
                 }
             }
-            dataJson = dataJson.concat("],bPlaying:" + playing + "}");
+            dataJson = dataJson.concat("],\"bPlaying\":" + playing + "}");
 
             //currently playing
             var xhr = new XMLHttpRequest();
             xhr.open("POST", 'http://localhost:6789', true);            //POST request to localhost:6789, NO third party
-            xhr.setRequestHeader('Content-Type', 'text/plain');         //text/plain as json does not reach my localhost
+            xhr.setRequestHeader('Content-Type', 'text/plain');
             xhr.send(dataJson);
         });
 }
