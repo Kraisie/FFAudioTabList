@@ -1,3 +1,20 @@
+browser.browserAction.onClicked.addListener(clickMe);
+var running = true;
+var interval = setInterval(runFunction, 1000);
+
+function clickMe() {
+    //turn extension on/off
+    running = !running;
+
+    if (running) {
+        browser.browserAction.setIcon({ path: "pics/icon96.png" });
+        interval = setInterval(runFunction, 1000);
+    } else {
+        browser.browserAction.setIcon({ path: "pics/crossIcon96.png" });
+        clearInterval(interval);
+    }
+}
+
 function runFunction(tab) {
     //get all tabs that play some audio
     browser.tabs.query({ audible: true })
@@ -34,6 +51,3 @@ function runFunction(tab) {
             }
         });
 }
-
-//update every second
-var t = setInterval(runFunction, 1000);
