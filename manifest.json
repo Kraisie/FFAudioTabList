@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Audio Tab List",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author":  "Kraisie",
   "homepage_url": "https://github.com/Kraisie/FFAudioTabList",
   "description": "Posts a list of all tabs that are currently playing any audio to the localhost so a program might catch those and use them. No server is requiered and no third party gets any data. This extension is only ment to be used as a means to an end!",
